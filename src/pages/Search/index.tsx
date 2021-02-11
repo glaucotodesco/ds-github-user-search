@@ -5,7 +5,8 @@ import './styles.scss';
 import { UserGitHub } from 'core/type/UserGitHub';
 import UserDetails from './components/UserDetails';
 import ImageLoader from "./components/Loaders/ImageLoader";
-import InfoLoader from "./components/Loaders/InfoLoader";
+import NotFound from "./components/NotFound";
+
 
 
 type FormState = {
@@ -14,7 +15,7 @@ type FormState = {
 
 
 const Search = () => {
- 
+  const [isNotFound, setIsNotFound] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState<UserGitHub>();
   const [formData, setFormData] = useState<FormState>({ name: '' });
@@ -30,7 +31,8 @@ const Search = () => {
    
     setIsLoading(true);
     makeRequest({ url: formData.name })
-      .then(resp => setUser(resp.data))
+      .then(  resp =>  {setUser(resp.data); setIsNotFound(false);})
+      .catch( error => setIsNotFound(true) )
       .finally(() => { setIsLoading(false) })
 
   }
@@ -54,7 +56,7 @@ const Search = () => {
         </div>
       </div>  
 
-      {isLoading ?  <ImageLoader/>: user?.id && <UserDetails user={user}/> }
+      {isLoading ?  <ImageLoader/>: isNotFound ? <NotFound/>:user?.id && <UserDetails user={user}/> }
       
     </>
   );
