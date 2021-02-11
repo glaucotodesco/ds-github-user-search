@@ -1,33 +1,39 @@
-import React from 'react';
+import { UserGitHub } from 'core/type/UserGitHub';
+import dayjs from 'dayjs';
+
 import './styles.scss';
 
-const UserDetails = () => {
+type Props = {
+    user : UserGitHub;
+}
+
+const UserDetails = ( {user}: Props) => {
   return (
     <div className="user-details-container">
       <div className="col col-1">
-        <img src="img.png" alt="Avatar" className="user-avatar" />
+        <img src={user.avatar_url} alt="Avatar" className="user-avatar" />
         <br />
         <button>Ver Perfil</button>
       </div>
       <div className="col col-2">
         <div className="user-statistic-card">
-          <div className="user-statistic">Repositórios: 10</div>
-          <div className="user-statistic">Seguidores: 100</div>
-          <div className="user-statistic">Seguindo: 323</div>
+          <div className="user-statistic">Repositórios: {user.public_repos}</div>
+          <div className="user-statistic">Seguidores: {user.followers }</div>
+          <div className="user-statistic">Seguindo: {user.following}</div>
         </div>
         <div className="user-information-card">
               <div className="user-informations-title">Informações</div>
               <div className="user-information-row">
-                <b>Empresa:&nbsp;</b> @ZupIT
+                <b>Empresa:&nbsp;</b> {user.company}
               </div>
               <div className="user-information-row">
-                <b>Website/Blog:&nbsp;</b>https://thewashington.dev
+                <b>Website/Blog:&nbsp;</b> {user.blog}
               </div>
               <div className="user-information-row">
-                <b>Localidade:&nbsp;</b>Sorocaba
+                <b>Localidade:&nbsp;</b> {user.location}
               </div>
               <div className="user-information-row">
-                <b>Membro desde:&nbsp;</b>19/10/2013
+                <b>Membro desde:&nbsp;</b> {dayjs(user.created_at).format('DD/MM/YYYY') }
               </div>
         </div>
       </div>

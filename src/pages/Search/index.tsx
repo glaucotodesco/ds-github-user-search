@@ -4,6 +4,7 @@ import './styles.scss';
 import { UserGitHub } from 'core/type/UserGitHub';
 import UserDetails from './components/UserDetails';
 
+
 type FormState = {
   name: string;
 }
@@ -44,7 +45,7 @@ const Search = () => {
           </form>
         </div>
       </div>
-      <UserDetails></UserDetails>
+      {user?.id && <UserDetails user={user}/> }
     </>
   );
 }
