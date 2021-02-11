@@ -1,5 +1,6 @@
 import { UserGitHub } from 'core/type/UserGitHub';
 import dayjs from 'dayjs';
+import { Link } from 'react-router-dom';
 
 import './styles.scss';
 
@@ -13,7 +14,9 @@ const UserDetails = ( {user}: Props) => {
       <div className="col col-1">
         <img src={user.avatar_url} alt="Avatar" className="user-avatar" />
         <br />
-        <button>Ver Perfil</button>
+        <a href={user.html_url} target="_new">
+          <button>Ver Perfil</button>
+        </a>
       </div>
       <div className="col col-2">
         <div className="user-statistic-card">

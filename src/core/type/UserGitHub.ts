@@ -7,5 +7,6 @@ export type UserGitHub = {
     created_at: string
     public_repos: number,
     followers: number,
-    following: number
+    following: number,
+    html_url: string
 }
