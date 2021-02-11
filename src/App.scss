@@ -1,11 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap');
 
 *{
-    font-family: 'Red Hat Display', sans-serif;
     font-family: 'Roboto', sans-serif;
 }
   
-
 body {
     margin: 0px;
+}
+
+button {
+    background-color: #1890FF;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    user-select: none;
+    margin-top: 24px;
+    border-radius: 3px;    
+}
+
+input {
+    width:  676px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 20px;
+    margin-top: 12px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:#BFBFBF;;
 }
