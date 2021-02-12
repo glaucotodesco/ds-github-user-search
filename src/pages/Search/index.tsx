@@ -4,8 +4,8 @@ import { makeRequest } from 'core/utils/request';
 import './styles.scss';
 import { UserGitHub } from 'core/type/UserGitHub';
 import UserDetails from './components/UserDetails';
-import ImageLoader from "./components/Loaders/ImageLoader";
-import NotFound from "./components/NotFound";
+import UserDatailsLoader from "./components/UserDetailsLoader/UserDetailsLoader";
+import NotFound from "../../core/components/NotFound";
 
 
 
@@ -56,7 +56,7 @@ const Search = () => {
         </div>
       </div>  
 
-      {isLoading ?  <ImageLoader/>: isNotFound ? <NotFound/>:user?.id && <UserDetails user={user}/> }
+      {isLoading ?  <UserDatailsLoader/>: isNotFound ? <NotFound/>:user?.id && <UserDetails user={user}/> }
       
     </>
   );

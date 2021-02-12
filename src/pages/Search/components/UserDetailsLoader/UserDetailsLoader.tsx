@@ -1,7 +1,6 @@
-import React from "react"
-import ContentLoader from "react-content-loader"
+import ContentLoader from "react-content-loader";
 
-const ImageLoader = () => (
+const UserDatailsLoader = () => (
   <ContentLoader 
     speed={2}
     width={1250}
@@ -16,4 +15,4 @@ const ImageLoader = () => (
   </ContentLoader>
 )
 
-export default ImageLoader
+export default UserDatailsLoader

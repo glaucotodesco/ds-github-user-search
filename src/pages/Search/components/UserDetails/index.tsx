@@ -1,12 +1,7 @@
 import React from "react";
 import { UserGitHub } from 'core/type/UserGitHub';
 import dayjs from 'dayjs';
-import { Link } from 'react-router-dom';
-
-
 import './styles.scss';
-import ImageLoader from "../Loaders/ImageLoader";
-import InfoLoader from "../Loaders/InfoLoader";
 
 type Props = {
   user: UserGitHub;
